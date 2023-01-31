@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <ul class="parent-of-li">
+            <li class="tabs">HOME</li>
+            <li class="tabs">WORK</li>
+            <li class="tabs">PORTFOLIO</li>
+            <li class="tabs">CONTACT</li>
+        </ul>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="parallax">
+                <img src="sky.jpeg" alt="" class="background" id="background">
+                <img src="cloud.png" alt="" class="foreground" id="foreground">
+                <img src="cloud3.png" alt=""  id="cloud3">
+                <img src="cloud4.png" alt=""  id="cloud4">
+
+                <article class="heading" id="heading">Heading</article>
+                <div class="gradient"></div>
+            </div>
+        </div>
+        
+        <section><p>CONTENT</p></section>
+         
+    </main>
+    <footer></footer>
+</body>
+<script>
+    let background =  document.getElementById('background');
+    let foreground =  document.getElementById('foreground');
+    let heading =  document.getElementById('heading');
+    let cloud3 =  document.getElementById('cloud3');
+    let cloud4 =  document.getElementById('cloud4');
+
+    window.addEventListener('scroll',function(){
+        let value = window.scrollY;
+        background.style.bottom = value * -.8 + 'px';
+        foreground.style.bottom = value * -.5 + 'px';
+        heading.style.top = value * -1.25 + 'px';
+        cloud3.style.bottom = value * 1.50 + 'px';
+        cloud4.style.top = value * -1.55 + 'px';
+    })
+</script>
+</html>
